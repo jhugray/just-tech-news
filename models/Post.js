@@ -1,6 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-
+// create our Post model
 class Post extends Model {
   static upvote(body, models) {
     return models.Vote.create({
@@ -36,8 +36,8 @@ class Post extends Model {
   }
 }
 
-
-  Post.init(
+// create fields/columns for Post model
+Post.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -71,6 +71,5 @@ class Post extends Model {
     modelName: 'post'
   }
 );
-
 
 module.exports = Post;
